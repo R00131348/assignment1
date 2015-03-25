@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -14,6 +17,7 @@ public class Application {
 	public static void main(String[] args)
 	{
 String chObjectFile = args [0];
+
 System.out.printf("Processing Object file %s...\n",chObjectFile);
 
 
@@ -35,6 +39,7 @@ System.out.println("Unknown I/O error.");
 
 public void run(String... args) throws Exception {
 setupDb(args[0]);
+
 String objectsDirectory = args[1];
 
 createIndexes();
@@ -42,28 +47,7 @@ createIndexes();
 List<Path> files = FileFinder.getFileList(objectsDirectory, "*.json");
 for (Path f : files) {
 ChObject chobject = new ObjectMapper().readValue(f.toFile(), ChObject.class);
-Long objectNode = addObjecttNode(chobject);
-connectObjectToId(objectNode, chobject.getId());
-connectObjectToTitle(objectNode, chobject.getTitle());
 }}
-
-
-private void connectObjectToTitle(Long objectNode, String title) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-private void connectObjectToId(Long objectNode, int id) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-private Long addObjecttNode(ChObject chobject) {
-	// TODO Auto-generated method stub
-	return null;
-}
 
 
 private void createIndexes() {
@@ -74,5 +58,6 @@ private void createIndexes() {
 
 private void setupDb(String string) {
 	// TODO Auto-generated method stub
+	
 	
 }}
