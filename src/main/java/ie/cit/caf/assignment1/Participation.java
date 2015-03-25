@@ -1,6 +1,6 @@
 package ie.cit.caf.assignment1;
 
-public class Participation {
+public class Participation<Participant, Role> {
 
 	private int person_id;
 	private int role_id;
@@ -11,14 +11,14 @@ public class Participation {
 	private String person_url;
 	private String role_url;
 	
-	@Override
-	public String toString() {
-		return "Participation [person_id=" + person_id + ", role_id=" + role_id
-				+ ", person_name=" + person_name + ", person_date="
-				+ person_date + ", role_name=" + role_name
-				+ ", role_display_name=" + role_display_name + ", person_url="
-				+ person_url + ", role_url=" + role_url + "]";
+	Participant participant(int person_id,String person_name, String person_date, String person_url) {
+	return null;
 	}
+	Role role(int role_id, String role_name, String role_display_name, String role_url) {
+		return null;
+	} 
+	
+	
 
 	public int getPerson_id() {
 		return person_id;
