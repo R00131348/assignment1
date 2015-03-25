@@ -1,6 +1,7 @@
 package ie.cit.caf.assignment1;
 
 import java.util.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ChObject {
 
-	private int id;
-	private String title;
+	private static int id;
+	private static String title;
 	private Date date;
 	private String medium;
 	private String creditline;
@@ -27,7 +28,7 @@ public class ChObject {
 	}
 
 
-	public int getId() {
+	public static int getId() {
 		return id;
 	}
 
@@ -37,7 +38,7 @@ public class ChObject {
 	}
 
 
-	public String getTitle() {
+	public static String getTitle() {
 		return title;
 	}
 
@@ -98,5 +99,6 @@ public class ChObject {
 	
 	
 
-
+	List<Participation> participations;
+	
 }

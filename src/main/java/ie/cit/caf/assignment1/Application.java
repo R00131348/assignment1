@@ -35,11 +35,11 @@ System.out.println("Unknown I/O error.");
 
 public void run(String... args) throws Exception {
 setupDb(args[0]);
-String artistsDirectory = args[1];
-String artworksDirectory = args[2];
+String objectsDirectory = args[1];
+
 createIndexes();
 //process artists
-List<Path> files = FileFinder.getFileList(artistsDirectory, "*.json");
+List<Path> files = FileFinder.getFileList(objectsDirectory, "*.json");
 for (Path f : files) {
 ChObject chobject = new ObjectMapper().readValue(f.toFile(), ChObject.class);
 Long objectNode = addObjecttNode(chobject);
